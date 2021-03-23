@@ -14,7 +14,7 @@ O objetivo desse repositório é armazenar todos os projetos feitos por [mim](ht
 Nome | Linguagem | Cadeira | Semestre
 ---------|---------|---------|:---------:
  [Pulseira de Pagamento](https://github.com/jos3s/Faculdade-Projetos/tree/master/ARQ%20DE%20COMPUTADORES/PulseiraDePagamentos) | MIPS | Arquitetura de Computadores | 2º Semestre
- [Labirinto](https://github.com/jos3s/Labirinto) | C | Laboratório de Programação | 2º Semestre
+ [Labirinto](https://github.com/jos3s/Faculdade-Projetos/tree/master/LAB%20DE%20PROGRAMACAO/Labirinto) | C | Laboratório de Programação | 2º Semestre
  [Implementação de Grafos](https://github.com/jos3s/Faculdade-Projetos/tree/master/ALG%20EM%20GRAFOS/Projeto1) | Python | Algoritmos em Grafos | 3º Semestre
  [Agenda com Swing](https://github.com/jos3s/Projeto-Agenda-Swing#) | Java | Programação Orientada a Objetos | 3º Semestre
  [Verificador de Prova do Método Axiomatico](https://github.com/jos3s/Faculdade-Projetos/tree/master/LOGICA/VerificadorDeProva) | Python | Lógica para Computação | 4º Semestre
