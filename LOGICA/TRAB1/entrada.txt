@@ -1,0 +1,10 @@
+1 a>((a>a)>a) A1 p=a q=(a>a)
+2 (a>((a>a)>a))>((a>(a>a))>(a>a)) A2 p=a q=(a>a) r=a
+3 (a>(a>a))>(a>a) MP1,2
+4 (a>(a>a)) A1 p=a q=a
+5 (a>a) MP3,4
+#
+# Primeiramente qualquer coisa que comece com o "#" é considerado comentário e o programa vai ignorar
+# Em segundo ponto encontramos durante a codificação decidimos fazer uma alteração no formato
+# da entrada, apenas por conta de legibilidade:
+# Não separamos por ';' as subistituições e sim com espaços.
