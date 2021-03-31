@@ -3,7 +3,7 @@
 
 ## Objetivo
 
-Reunir os códigos feitos em Python para o trabalho de implementação da cadeira Algoritmos em Grafos no 3 Semestre de Eng. de Software.
+Reunir os códigos feitos em Python para o trabalho de implementação da cadeira Algoritmos em Grafos do Professor Pablo Soares no 3 Semestre de Eng. de Software.
 
 ## Códigos
 
