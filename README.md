@@ -20,3 +20,4 @@ Nome | Linguagem | Cadeira | Semestre
  [Verificador de Prova do Método Axiomatico](https://github.com/jos3s/Faculdade-Projetos/tree/master/LOGICA/VerificadorDeProva) | Python | Lógica para Computação | 4º Semestre
  [Implementação de um servidor com sockets](https://github.com/jos3s/Faculdade-Projetos/tree/master/REDES) | Go | Redes de Computadores | 4º Semestre
  [HeapSort](https://github.com/jos3s/Faculdade-Projetos/tree/master/PAA/HeapSort) | Python | Projeto e Análise de Algoritmos | 4º Semestre
+ [Clínica](https://github.com/jos3s/Faculdade-Projetos/tree/master/PAA/ClinicaBD) | SQL | Fundamento de Banco de Dados | 4º Semestre
