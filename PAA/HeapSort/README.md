@@ -1,10 +1,16 @@
 # HeapSort
 
+- [HeapSort](#heapsort)
+  - [Objetivo](#objetivo)
+  - [Entrada e Saída do Programa](#entrada-e-saída-do-programa)
+    - [Exemplo de arquivo de entrada e de saída](#exemplo-de-arquivo-de-entrada-e-de-saída)
+  - [Como usar](#como-usar)
+
 ## Objetivo
 
 Dado um conjunto de números lidos de entrada, lê-los, armazena-los em um vetor e imprimi-los em ordem crescente. Utilizando o algoritmo de HeapSort. O segredo desse agoritmo de ordenação é a estrutura de dados heap que pode ser vista como uma maneira diferente de ver uma árvore binária e pode ser utilizada para determinar menores e maiores de um dado conjunto. Como um dos algoritmos mais eficientes de ordenação, os alunos neste trabalho são convidados a pesquisarem e implementarem um HeapSort.
 
-### Entrada e Saída do Programa
+## Entrada e Saída do Programa
 
 O arquivo de entrada respeita o seguinte formato:
 
@@ -16,7 +22,7 @@ O arquivo de saída deve ter o seguinte formato:
 - A primeira linha é a quantidade de números, n;
 - As n linhas adjacentes contém, cada uma, um número.
 
-#### Exemplo de arquivo de entrada e de saída
+### Exemplo de arquivo de entrada e de saída
 
 Entrada | Saída |
 --------|-------|
