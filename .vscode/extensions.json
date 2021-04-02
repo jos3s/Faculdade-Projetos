@@ -1,0 +1,16 @@
+{
+	"recommendations": [
+		"xyz.local-history",
+		"editorconfig.editorconfig",
+		"ms-vsliveshare.vsliveshare-pack",
+		"golang.go",
+		"ms-python.python",
+		"kevinrose.vsc-python-indent",
+		"mtxr.sqltools",
+		"mtxr.sqltools-driver-pg",
+		"ms-vscode.cpptools",
+		"tomoki1207.pdf",
+		"davidanson.vscode-markdownlint",
+		"yzhang.markdown-all-in-one",
+	]
+}
