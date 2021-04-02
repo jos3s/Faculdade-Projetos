@@ -1,22 +1,15 @@
 from pysat.solvers import Glucose4
 from pysat.formula import CNF 
-from math import ceil
-
 from matriz import criarMatriz, lerArq
 
 def getPdgs(matriz, formula, lin=0, col=0):
 	arestas = lerArq()
-	
 	for col in range(len(matriz[lin])):
 		for lin in range(len(matriz)):
-
 			for auxCol in range(col+1, len(matriz[lin])):
-				#print('negarLinhaAtual')
 				formula.append([-matriz[lin][col], -matriz[lin][auxCol]])
-				
 			auxForm = [-matriz[lin][col]]
 			for auxLin in range(len(matriz)):
-				#print('negarColuna+LinhadoContrario+AdicionarSeguimento')
 				if auxLin != lin:
 					formula.append([-matriz[lin][col], -matriz[auxLin][col]])
 
@@ -54,5 +47,4 @@ def valoresValidos(model):
 		for item in model:
 			if item>0:
 				a.append(item)
-
 	print(a)
