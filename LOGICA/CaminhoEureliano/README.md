@@ -6,7 +6,7 @@
 
 Como um exemplo, considere as figuras abaixo:
 
-<div style="text-align:center"><img src=".\IMG/2021-04-03-01-01-10.png" alt="Exemplo de Grafo" id="fig1"/></div>
+<div style="text-align:center"><img src="IMG/2021-04-03-01-01-10.png" alt="Exemplo de Grafo" id="fig1"/></div>
 
 Na figura da esquerda temos um grafo com vértices A,B,C,D. Na segunda figura é mostrado um caminho, que começa no vértice C, que passa por cada aresta exatamente uma única vez.
 
