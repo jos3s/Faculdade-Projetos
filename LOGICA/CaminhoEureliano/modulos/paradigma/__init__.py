@@ -1,6 +1,6 @@
 from pysat.solvers import Glucose4
-from pysat.formula import CNF 
-from matriz import criarMatriz, lerArq
+from pysat.formula import CNF
+from modulos.matriz import criarMatriz, lerArq
 
 def getPdgs(matriz, formula, lin=0, col=0):
 	arestas = lerArq()
@@ -33,18 +33,17 @@ def resolver(passo):
 	formula=CNF()
 	g=Glucose4()
 	getPdgs(criarMatriz(),formula)
-	print(passo)
 	formula.append([passo])
 	g.append_formula(formula)
-	print(g.solve())
+	print(f'{passo}  {g.solve()}')
 	valoresValidos(g.get_model())
 	#print(g.get_model())
 
 
 def valoresValidos(model):
-	a=[]
 	if model:
+		a=[]
 		for item in model:
 			if item>0:
 				a.append(item)
-	print(a)
+		print(f'{a}')
