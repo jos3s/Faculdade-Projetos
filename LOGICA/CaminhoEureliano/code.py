@@ -1,5 +1,5 @@
-from modulos.paradigma import resolver
-from modulos.matriz import passos, printMatriz,criarMatriz
+from paradigma import resolver
+from matriz import passos, printMatriz,criarMatriz
 
 if __name__ == '__main__':
     while True:

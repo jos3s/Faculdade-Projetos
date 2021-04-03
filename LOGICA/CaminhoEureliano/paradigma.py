@@ -1,6 +1,6 @@
 from pysat.solvers import Glucose4
 from pysat.formula import CNF
-from modulos.matriz import criarMatriz, lerArq
+from matriz import criarMatriz, lerArq
 
 def getPdgs(matriz, formula, lin=0, col=0):
 	arestas = lerArq()

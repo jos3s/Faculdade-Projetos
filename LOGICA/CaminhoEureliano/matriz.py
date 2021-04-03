@@ -1,6 +1,6 @@
 def lerArq():
 	try:
-		arq=open('LOGICA\CaminhoEureliano\entrada.txt','r',encoding="utf8")
+		arq=open('entrada.txt','rt',encoding="utf8")
 	except:
 		print('Erro na leitura do arquivo')
 	else:
