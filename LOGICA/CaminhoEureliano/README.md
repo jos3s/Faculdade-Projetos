@@ -1,5 +1,11 @@
 # Resolvedor de Caminho Eureliano
 
+- [Resolvedor de Caminho Eureliano](#resolvedor-de-caminho-eureliano)
+  - [Explicação: Caminho Eureliano](#explicação-caminho-eureliano)
+  - [Objetivo](#objetivo)
+  - [Como usar](#como-usar)
+    - [Como alterar a entrada do programa](#como-alterar-a-entrada-do-programa)
+
 ## Explicação: Caminho Eureliano
 
 > [“Um Caminho Euleriano é um caminho em um grafo que visita toda aresta exatamente uma vez.... O conceito foi introduzido por Leonard Euler para a resolução do famoso problema das sete pontes de Königsberg em 1736.”](https://pt.wikipedia.org/wiki/Caminho_euleriano)
