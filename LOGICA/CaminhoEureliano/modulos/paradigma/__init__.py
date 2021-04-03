@@ -35,7 +35,7 @@ def resolver(passo):
 	getPdgs(criarMatriz(),formula)
 	formula.append([passo])
 	g.append_formula(formula)
-	print(f'{passo}  {g.solve()}')
+	print(f'\33[32m{passo}\33[m  \33[34m{g.solve()}\33[m')
 	valoresValidos(g.get_model())
 	#print(g.get_model())
 
@@ -46,4 +46,4 @@ def valoresValidos(model):
 		for item in model:
 			if item>0:
 				a.append(item)
-		print(f'{a}')
+		print(f'Passos válidos: \33[35m{a}\33[m')
