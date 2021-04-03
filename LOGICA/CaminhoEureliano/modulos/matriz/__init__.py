@@ -26,8 +26,12 @@ def criarMatriz():
 
 
 def printMatriz(matriz):
-	for linha in matriz:
-		print(linha)
+	arestas=lerArq()
+	for i in range(len(matriz)):
+		print(f"{arestas[i]} [",end="")
+		for j in range(len(matriz[i])):
+			print(f"\33[34m{matriz[i][j]}{' ' if j<(len(matriz[i])-1) else ''}", end="")
+		print("\33[m]")
 
 
 def passos():
