@@ -61,22 +61,20 @@ Cada linha no arquivo representa a conexão entre os vértices, **é necessário
 
 ### Saída do Programa
 
-Executando o programa com o grafo da [figura 1](#fig1), o programa vai pergunta se o usuário deseja exibir a matriz de passos que é gerada com a entrada:
+Executando o programa com o grafo da [figura 1](#fig1), o programa vai perguntar se o usuário deseja exibir a matriz de passos que é gerada com a entrada:
 
 <div style="text-align:center"><img src="IMG/2021-04-04-13-38-11.png" alt="Matriz de passos"/></div>
 
-Com essa matriz é executada a função **resolver** que vai dizer se com determinado o passo inicial é possível encontrar uma resolução. Exemplo de possíveis saidas:
+Com essa matriz é executada a função **resolver** que vai dizer se é possível encontrar uma resolução com um determinado passo inicial. Exemplo de possíveis saidas:
 
 Passo inicial inválido| Passo inicial válido
 :-------:|:----:|
 ![Passo inicial inválido](IMG/2021-04-04-13-38-50.png) | ![Passo inicial válido](IMG/2021-04-04-13-39-16.png)
 
-Nos exemplos de saída acima, temos na primeira linha a indicação em verde de qual é foi o primeiro passo escolhido e se é possível resolver o problema usando esse passo.
-
 Se for uma resolução válida, teremos mais 3 linhas:
 
 - Na segunda linha temos uma lista com todos os passos válidos se existerem, para resolver esse problema,os passos estão em ordem crescente mas não representam a ordem que deve ser feitos os passos, apenas quais são eles.
 - Na terceira linha (opcional) mostra quais os conjunto de vértices vão ser usados para resolver o problemas, mas não estão ordenados como na linha 2;
-- Na quarta linha da saída (opcional) mostra qual seria a sequência dos vértices que deve ser seguida para resolver o problema. Essa exibição em grafos com vértices com vários possíveis caminhos pode ocasionar o travamento da execução do problema.
+- Na quarta linha da saída (opcional) mostra qual seria a sequência dos vértices que deve ser seguida para resolver o problema.
 
-Essa saída será exibida para um array de possívies primeiros passos gerado pela matriz.
+Essa saída será exibida para um array de possívies primeiros passos gerado pela matriz. De tal modo que se as valorações forem falsas, então o grafo de entrada não possui um caminho eureliano, mas se tiver ao menos uma verdadeira existe um caminho eureliano.
