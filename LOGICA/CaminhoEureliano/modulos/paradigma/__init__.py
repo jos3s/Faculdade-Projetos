@@ -45,8 +45,7 @@ def resolver(passo:int,conjuntoVertices:bool=False,ordemVertices:bool=True):
 	print(f'O passo inicial para prova é:\33[32m{passo}\33[m, o caminho com ele é \33[34m{g.solve()}\33[m')
 	model=g.get_model()
 	if model:
-		vetor=valoresValidos(model)
-		print(f'Passos válidos: \33[35m{vetor}\33[m')
+		print(f'Passos válidos: \33[35m{valoresValidos(model)}\33[m')
 		if conjuntoVertices:
 			print(f'Esse são os conjuntos de vértices usados (fora de ordem): \33[36m{caminhosUsados(model)}\33[m')
 		if ordemVertices:
@@ -83,8 +82,6 @@ def caminhosUsados(model:list)-> list:
 def ordemValida(passo:int, model:list):
 	valores = valoresValidos(model)
 	vertices = caminhosUsados(model)
-	#entrada -> arestas
-	arestas = lerArq()
 	pos = int(passo /numPassos)
 	saida = []
 	for valido in range(0,len(valores)):
