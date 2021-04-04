@@ -1,11 +1,13 @@
 # Cliente e Servidor em GO
 
 - [Cliente e Servidor em GO](#cliente-e-servidor-em-go)
-  - [Objetivo](#objetivo)
-    - [Servidor](#servidor)
-    - [Cliente](#cliente)
-    - [Funções do programa](#funções-do-programa)
-  - [Restrições de implementação](#restrições-de-implementação)
+	- [Objetivo](#objetivo)
+		- [Servidor](#servidor)
+		- [Cliente](#cliente)
+		- [Funções do programa](#funções-do-programa)
+		- [Restrições de implementação](#restrições-de-implementação)
+	- [Como usar](#como-usar)
+		- [Como executar](#como-executar)
 
 ## Objetivo
 
@@ -32,7 +34,7 @@ Implementar um processo de cliente e servidor em GO utilizando sockets.
 
 Função | Descrição | Condição de Saída
 ---------|----------|---------
- Login/Cadastrar | Exibir a opção do cliente cadastar ou logar no servidor | Fazer o cadastro ou logar com sucesso 
+ Login/Cadastrar | Exibir a opção do cliente cadastar ou logar no servidor | Fazer o cadastro ou logar com sucesso
  Exibir um Menu | Exibir o Menu com todas opções abaixo | O cliente selecionar uma das funções abaixo
  Inverter String | O servidor responderá todas as próximas mensagens do cliente com o inverso da mensagem. | O cliente digitar “SAIR”
  IMC | O servidor irá esperar uma string contendo a altura e o peso do cliente e responderá com o IMC e seu estado corporal. | Após responder, o servidor voltará ao menu
@@ -43,9 +45,27 @@ Função | Descrição | Condição de Saída
  Filme Aleatório | O servidor irá sortear um filme cadastradr aleatoriamente e irá responder para o cliente. | Após enviar a mensagem, o servidor voltará ao menu
  Sair | O servidor irá encerrar a conexão desse cliente e removê-lo da lista dos clientes online. | Receber "SAIR" do cliente
 
-## Restrições de implementação
+### Restrições de implementação
 
 - O servidor e o cliente devem ser implementados na linguagem Go.
 - O tipo de socket usado será UDP.
 - O servidor deverá aceitar e tratar múltiplos clientes concorrentemente.
 - O prazo máximo para apresentação do trabalho ao professor é o fim do semestre letivo.
+
+## Como usar
+
+Para rodar o código é necessário ter a pasta *sck* dentro da pasta de *src* do GO (`~/GO/src`). O caminho da localização da pasta GO depende do sistema operacional usado para rodar o código.
+
+### Como executar
+
+Para executar o programa é recomendado usar duas ou três instâncias do terminal, uma para o servidor e os outras para a execução do cliente. O códigos podem ser rodados usando:
+
+```bash
+go run servidor.go
+```
+
+E logo após:
+
+```bash
+go run cliente/cliente.go
+```
