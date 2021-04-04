@@ -1,5 +1,5 @@
 from modulos.paradigma import resolver
-from modulos.matriz import passos, printMatriz,criarMatriz
+from modulos.matriz import primeirosPassos, printMatriz,criarMatriz
 
 if __name__ == '__main__':
     while True:
@@ -10,6 +10,8 @@ if __name__ == '__main__':
         elif opc in 'Nn':
             break
     print("\nExecutando o caminho eureliano: ")
-    passo = passos()
-    for item in passo:
-        resolver(item)
+    passo1 = primeirosPassos()
+    for item in passo1:
+        """ dependendo do grafo de entrada a função que exibe a ordem dos vértices pode travar o código
+        	se isso acontecer apenas troque o True da variável ordemVertices por False"""
+        resolver(item, conjuntoVertices=True,ordemVertices=True)
