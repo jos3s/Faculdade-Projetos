@@ -1,10 +1,11 @@
 # Resolvedor de Caminho Eureliano
 
 - [Resolvedor de Caminho Eureliano](#resolvedor-de-caminho-eureliano)
-  - [Explicação: Caminho Eureliano](#explicação-caminho-eureliano)
-  - [Objetivo](#objetivo)
-  - [Como usar](#como-usar)
-    - [Como alterar a entrada do programa](#como-alterar-a-entrada-do-programa)
+	- [Explicação: Caminho Eureliano](#explicação-caminho-eureliano)
+	- [Objetivo](#objetivo)
+	- [Como usar](#como-usar)
+		- [Como alterar a entrada do programa](#como-alterar-a-entrada-do-programa)
+		- [Saída do Programa](#saída-do-programa)
 
 ## Explicação: Caminho Eureliano
 
@@ -57,3 +58,25 @@ entrada.txt| Representação com letras|
 4 3| D C
 
 Cada linha no arquivo representa a conexão entre os vértices, **é necessário colocar todos os possíveis caminhos no arquivo e em ordem crescente dos possíveis caminhos.**
+
+### Saída do Programa
+
+Executando o programa com o grafo da [figura 1](#fig1), o programa vai pergunta se o usuário deseja exibir a matriz de passos que é gerada com a entrada:
+
+<div style="text-align:center"><img src="IMG/2021-04-04-13-38-11.png" alt="Matriz de passos"/></div>
+
+Com essa matriz é executada a função **resolver** que vai dizer se com determinado o passo inicial é possível encontrar uma resolução. Exemplo de possíveis saidas:
+
+Passo inicial inválido| Passo inicial válido
+:-------:|:----:|
+![Passo inválido](IMG/2021-04-04-13-38-50.png) | ![Passo válido](IMG/2021-04-04-13-39-16.png)
+
+Nos exemplos de saída acima, temos na primeira linha a indicação em verde de qual é foi o primeiro passo escolhido e se é possível resolver o problema usando esse passo.
+
+Se for uma resolução válida, teremos mais 3 linhas:
+
+- Na segunda linha temos uma lista com todos os passos válidos se existerem, para resolver esse problema,os passos estão em ordem crescente mas não representam a ordem que deve ser feitos os passos, apenas quais são eles.
+- Na terceira linha (opcional) mostra quais os conjunto de vértices vão ser usados para resolver o problemas, mas não estão ordenados como na linha 2;
+- Na quarta linha da saída (opcional) mostra qual seria a sequência dos vértices que deve ser seguida para resolver o problema. Essa exibição em problemas muito grandes ([com por exemplo esse grafo](https://google.com)) pode ocasionar o travamento da execução do problema.
+
+Essa saída será exibida para um array de possívies primeiros passos gerado pela matriz.
