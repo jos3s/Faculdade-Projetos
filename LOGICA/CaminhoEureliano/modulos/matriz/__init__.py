@@ -11,7 +11,7 @@ def lerArq():
 		return entrada
 
 
-def criarMatriz():
+def criarMatriz()->list[list]:
 	arestas=lerArq()
 	pass0s= passos(arestas)
 	matriz=[]
@@ -25,7 +25,7 @@ def criarMatriz():
 	return matriz
 
 
-def printMatriz(matriz):
+def printMatriz(matriz:list[list]):
 	arestas=lerArq()
 	for i in range(len(matriz)):
 		print(f"{arestas[i]} [",end="")
@@ -42,5 +42,5 @@ def primeirosPassos():
 	return passos
 
 
-def passos(arestas):
+def passos(arestas:list[list]):
     return int(len(arestas)/2)

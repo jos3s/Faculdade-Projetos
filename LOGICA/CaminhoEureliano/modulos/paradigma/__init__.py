@@ -8,7 +8,7 @@ matriz=criarMatriz()
 arestas=lerArq()
 numPassos=passos(arestas)
 
-def getPdgs(matriz, formula, lin=0, col=0):
+def getPdgs(matriz:list[list], formula:CNF, lin:int=0, col:int=0):
 	for col in range(len(matriz[lin])):
 		for lin in range(len(matriz)):
 			for auxCol in range(col+1, len(matriz[lin])):
@@ -25,17 +25,17 @@ def getPdgs(matriz, formula, lin=0, col=0):
 				formula.append(auxForm)
 
 
-def negarLinha(valor, lin, col, matriz, formula):
+def negarLinha(valor:int, lin:int, col:int, matriz:list[list], formula:CNF):
 	for col in range(col, len(matriz[lin])):
 		formula.append([-valor, -matriz[lin][col]])
 
-def resolver(passo,conjuntoVertices=False,ordemVertices=True):
+def resolver(passo:int,conjuntoVertices:bool=False,ordemVertices:bool=True):
 	"""Resolve o caminho eureliano do grafo.
 
-	Args:
-		passo (int): Recebe um array contendo os primeiros passos de cada possível começo do problema
-		conjuntoVertices (bool, optional): Exibir o uma lista fora de ordem com o conjunto dos vértices que resolvem o problema. Padrão é False.
-		ordemVertices (bool, optional): Exibir o caminho pelos vértices a ser percorrido para resolver o problema. Padrão é True.
+	:param passo: Recebe um array contendo os primeiros passos de cada possível começo do problema
+	:param conjuntoVertices: Exibir o uma lista fora de ordem com o conjunto dos vértices que resolvem o problema. (Default value = False)
+	:param ordemVertices: Exibir o caminho pelos vértices a ser percorrido para resolver o problema. (Default value = True)
+
  	"""
 	formula=CNF()
 	g=Glucose4()
@@ -54,25 +54,25 @@ def resolver(passo,conjuntoVertices=False,ordemVertices=True):
 	print()
 
 
-def valoresValidos(model):
+def valoresValidos(model:list):
 	if model:
 		return list(filter(lambda x: x>0, model ))
 
 
-def calcularPosicao(passos):
+def calcularPosicao(passos:list):
 	pos=[]
 	for item in passos:
 		pos.append(int(ceil(item/numPassos))-1)
 	return pos
 
 
-def retornarIdxVertices(model):
+def retornarIdxVertices(model:list):
 	if model:
 		a=list(filter(lambda x: x>0, model ))
 		return calcularPosicao(a)
 
 
-def caminhosUsados(model):
+def caminhosUsados(model:list)-> list:
 	pos=retornarIdxVertices(model)
 	vet=[]
 	for item in pos:
@@ -80,7 +80,7 @@ def caminhosUsados(model):
 	return vet
 
 
-def ordemValida(passo, model):
+def ordemValida(passo:int, model:list):
 	valores = valoresValidos(model)
 	vertices = caminhosUsados(model)
 	#entrada -> arestas
