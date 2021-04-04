@@ -13,5 +13,3 @@ if __name__ == '__main__':
 	passo1 = primeirosPassos()
 	for item in passo1:
 		resolver(item, conjuntoVertices=True,ordemVertices=True)
-	""" dependendo do grafo de entrada a função que exibe a ordem dos vértices pode travar o código
-		se isso acontecer apenas troque o True da variável ordemVertices por False"""
