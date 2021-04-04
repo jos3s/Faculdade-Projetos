@@ -12,13 +12,13 @@ def lerArq():
 
 
 def criarMatriz():
-	entrada=lerArq()
-	passos=int(len(entrada)/2)
+	arestas=lerArq()
+	pass0s= passos(arestas)
 	matriz=[]
 	valor=1
-	for _ in entrada:
+	for _ in arestas:
 		l=[]
-		for _ in range (0,passos):
+		for _ in range (0,pass0s):
 			l.append(valor)
 			valor+=1
 		matriz.append(l)
@@ -34,9 +34,13 @@ def printMatriz(matriz):
 		print("\33[m]")
 
 
-def passos():
+def primeirosPassos():
 	matriz=criarMatriz()
 	passos=[]
 	for i in range(len(matriz)):
 		passos.append(matriz[i][0])
 	return passos
+
+
+def passos(arestas):
+    return int(len(arestas)/2)
