@@ -56,4 +56,4 @@ entrada.txt| Representação com letras|
 4 2| D B
 4 3| D C
 
-Cada linha no arquivo representa a conexão entre os vértices, é necessário colocar todos os possíveis caminhos no arquivo e em ordem crescente dos possíveis caminhos.
+Cada linha no arquivo representa a conexão entre os vértices, **é necessário colocar todos os possíveis caminhos no arquivo e em ordem crescente dos possíveis caminhos.**
