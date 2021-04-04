@@ -57,7 +57,7 @@ entrada.txt| Representação com letras|
 4 2| D B
 4 3| D C
 
-Cada linha no arquivo representa a conexão entre os vértices, **é necessário colocar todos os possíveis caminhos no arquivo e em ordem crescente dos possíveis caminhos.**
+Cada linha no arquivo representa a conexão entre os vértices, **é necessário colocar todos os possíveis caminhos no arquivo, sem repetição e em ordem crescente dos possíveis caminhos.**
 
 ### Saída do Programa
 
@@ -69,7 +69,7 @@ Com essa matriz é executada a função **resolver** que vai dizer se com determ
 
 Passo inicial inválido| Passo inicial válido
 :-------:|:----:|
-![Passo inválido](IMG/2021-04-04-13-38-50.png) | ![Passo válido](IMG/2021-04-04-13-39-16.png)
+![Passo inicial inválido](IMG/2021-04-04-13-38-50.png) | ![Passo inicial válido](IMG/2021-04-04-13-39-16.png)
 
 Nos exemplos de saída acima, temos na primeira linha a indicação em verde de qual é foi o primeiro passo escolhido e se é possível resolver o problema usando esse passo.
 
@@ -77,6 +77,6 @@ Se for uma resolução válida, teremos mais 3 linhas:
 
 - Na segunda linha temos uma lista com todos os passos válidos se existerem, para resolver esse problema,os passos estão em ordem crescente mas não representam a ordem que deve ser feitos os passos, apenas quais são eles.
 - Na terceira linha (opcional) mostra quais os conjunto de vértices vão ser usados para resolver o problemas, mas não estão ordenados como na linha 2;
-- Na quarta linha da saída (opcional) mostra qual seria a sequência dos vértices que deve ser seguida para resolver o problema. Essa exibição em problemas muito grandes ([com por exemplo esse grafo](https://google.com)) pode ocasionar o travamento da execução do problema.
+- Na quarta linha da saída (opcional) mostra qual seria a sequência dos vértices que deve ser seguida para resolver o problema. Essa exibição em grafos com vértices com vários possíveis caminhos pode ocasionar o travamento da execução do problema.
 
 Essa saída será exibida para um array de possívies primeiros passos gerado pela matriz.
