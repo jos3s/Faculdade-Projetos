@@ -4,11 +4,69 @@ from math import ceil
 from modulos.matriz import criarMatriz, lerArq, passos
 
 #Variaveis globais
-matriz=criarMatriz()
-arestas=lerArq()
-numPassos=passos(arestas)
+matriz = criarMatriz()
+arestas = lerArq()
+numPassos = passos(arestas)
 
-def getPdgs(matriz:list[list], formula:CNF, lin:int=0, col:int=0):
+def resolver(passo:int,conjuntoVertices:bool=False,ordemVertices:bool=True):
+	"""Resolve o caminho eureliano do grafo.
+
+	:param passo: Recebe um array contendo os primeiros passos de cada possível começo do problema
+	:param conjuntoVertices: Exibir o uma lista fora de ordem com o conjunto dos vértices que resolvem o problema. (Default value = False)
+	:param ordemVertices: Exibir o caminho pelos vértices a ser percorrido para resolver o problema. (Default value = True)
+
+ 	"""
+	formula=CNF()
+	g=Glucose4()
+	getClausulas(matriz,formula)
+	formula.append([passo])
+	g.append_formula(formula)
+	print(f'O passo inicial para prova é: \33[32m{passo}\33[m, o caminho com ele é \33[34m{g.solve()}\33[m')
+	model=g.get_model()
+	if model:
+		valoracaoValida = valoresValidos(model)
+		print(f'Passos válidos: \33[35m{valoracaoValida}\33[m')
+		if conjuntoVertices:
+			print(f'Esse são os conjuntos de vértices usados (fora de ordem): \33[36m{caminhosUsados(model)}\33[m')
+		if ordemVertices:
+			print(f"Ordem de passagem pelos vértices: ")
+			printEmOrdem(valoracaoValida)
+	print()
+
+
+def printEmOrdem(passos:list):
+	lista = verticesEmOrdem(passos)
+	print('\33[33m[', end='')
+	for i in range(0, len(lista)):
+		print(lista[i], end='')
+		if i != len(lista)-1:
+			print(' -> ', end='')
+	print(']\33[m')
+
+
+def verticesEmOrdem(passos:list):
+	ordenados = []
+	tam = len(passos)
+	for _ in range(0, tam+1):
+		ordenados.append(-1)
+
+	for passo in passos:
+		iAresta = int((passo-1)/tam)
+		ar = arestas[iAresta][0]
+		iOrdenados = -1
+		while (int((passo-1)/tam)) == iAresta and passo > 0:
+			iOrdenados += 1
+			passo -= 1
+		ordenados[iOrdenados] = ar
+		if iOrdenados == (len(ordenados)-2):
+			iOrdenados += 1
+			ar = arestas[iAresta][1]
+			ordenados[iOrdenados] = ar
+
+	return ordenados
+
+
+def getClausulas(matriz:list[list], formula:CNF, lin:int=0, col:int=0):
 	for col in range(len(matriz[lin])):
 		for lin in range(len(matriz)):
 			for auxCol in range(col+1, len(matriz[lin])):
@@ -28,29 +86,6 @@ def getPdgs(matriz:list[list], formula:CNF, lin:int=0, col:int=0):
 def negarLinha(valor:int, lin:int, col:int, matriz:list[list], formula:CNF):
 	for col in range(col, len(matriz[lin])):
 		formula.append([-valor, -matriz[lin][col]])
-
-def resolver(passo:int,conjuntoVertices:bool=False,ordemVertices:bool=True):
-	"""Resolve o caminho eureliano do grafo.
-
-	:param passo: Recebe um array contendo os primeiros passos de cada possível começo do problema
-	:param conjuntoVertices: Exibir o uma lista fora de ordem com o conjunto dos vértices que resolvem o problema. (Default value = False)
-	:param ordemVertices: Exibir o caminho pelos vértices a ser percorrido para resolver o problema. (Default value = True)
-
- 	"""
-	formula=CNF()
-	g=Glucose4()
-	getPdgs(matriz,formula)
-	formula.append([passo])
-	g.append_formula(formula)
-	print(f'O passo inicial para prova é:\33[32m{passo}\33[m, o caminho com ele é \33[34m{g.solve()}\33[m')
-	model=g.get_model()
-	if model:
-		print(f'Passos válidos: \33[35m{valoresValidos(model)}\33[m')
-		if conjuntoVertices:
-			print(f'Esse são os conjuntos de vértices usados (fora de ordem): \33[36m{caminhosUsados(model)}\33[m')
-		if ordemVertices:
-			print(f"Ordem de passagem pelos vértices: \33[33m{ordemValida(passo,model)}\33[m")
-	print()
 
 
 def valoresValidos(model:list):
@@ -77,25 +112,3 @@ def caminhosUsados(model:list)-> list:
 	for item in pos:
 		vet.append(arestas[item])
 	return vet
-
-
-def ordemValida(passo:int, model:list):
-	valores = valoresValidos(model)
-	vertices = caminhosUsados(model)
-	pos = int(passo /numPassos)
-	saida = []
-	for valido in range(0,len(valores)):
-		if passo == valores[valido]:
-			aux = arestas[pos]
-			saida.append(aux[0])
-			vertices.remove(aux)
-	while vertices != []:
-		for item in vertices:
-			if item[0] == aux[1]:
-				aux = item
-				saida.append(aux[0])
-				if len(vertices) == 1:
-					saida.append(aux[1])
-				vertices.remove(aux)
-				break
-	return saida
