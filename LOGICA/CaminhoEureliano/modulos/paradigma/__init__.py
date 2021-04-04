@@ -33,7 +33,7 @@ def resolver(passo,conjuntoVertices=False,ordemVertices=True):
 	"""Resolve o caminho eureliano do grafo.
 
 	Args:
-		passo ([int]): Recebe um array contendo os primeiros passos de cada possível começo do problema
+		passo (int): Recebe um array contendo os primeiros passos de cada possível começo do problema
 		conjuntoVertices (bool, optional): Exibir o uma lista fora de ordem com o conjunto dos vértices que resolvem o problema. Padrão é False.
 		ordemVertices (bool, optional): Exibir o caminho pelos vértices a ser percorrido para resolver o problema. Padrão é True.
  	"""
