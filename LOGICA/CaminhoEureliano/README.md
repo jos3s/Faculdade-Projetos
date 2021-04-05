@@ -63,9 +63,9 @@ Cada linha no arquivo representa a conexão entre os vértices, **é necessário
 
 Executando o programa com o grafo da [figura 1](#fig1), o programa vai perguntar se o usuário deseja exibir a matriz de passos que é gerada com a entrada:
 
-<div style="text-align:center"><img src="IMG/2021-04-04-13-38-11.png" alt="Matriz de passos"/></div>
+![Matriz de passos](IMG/2021-04-04-13-38-11.png)
 
-Com essa matriz é executada a função **resolver** que vai dizer se é possível encontrar uma resolução com um determinado passo inicial. Exemplo de possíveis saidas:
+Com essa matriz é executada a função **resolver** que vai dizer na primeira linha da saída se é possível encontrar uma resolução com um determinado passo inicial. Exemplo de possíveis saidas:
 
 Passo inicial inválido| Passo inicial válido
 :-------:|:----:|
@@ -77,4 +77,4 @@ Se for uma resolução válida, teremos mais 3 linhas:
 - Na terceira linha (opcional) mostra quais os conjunto de vértices vão ser usados para resolver o problemas, mas não estão ordenados como na linha 2;
 - Na quarta linha da saída (opcional) mostra qual seria a sequência dos vértices que deve ser seguida para resolver o problema.
 
-Essa saída será exibida para um array de possívies primeiros passos gerado pela matriz. De tal modo que se as valorações forem falsas, então o grafo de entrada não possui um caminho eureliano, mas se tiver ao menos uma verdadeira existe um caminho eureliano.
+Essa saída será exibida para um array de possíveis primeiros passos gerado pela matriz. De tal modo que se as valorações forem falsas, então o grafo de entrada não possui um caminho eureliano, mas se tiver ao menos uma verdadeira significa que existe um caminho eureliano.
