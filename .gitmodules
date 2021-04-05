@@ -1,0 +1,3 @@
+[submodule "POO/ProjetoAgenda"]
+	path = POO/ProjetoAgenda
+	url = https://github.com/jos3s/Projeto-Agenda-Swing.git
