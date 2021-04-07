@@ -150,7 +150,7 @@ func main() {
 				fmt.Println("Digite a sua altura(metros) usando '.' como separador e seu peso(kg) (Use ',' para separar os valores): ")
 				fmt.Scanln(&msg_txt)
 				if len(strings.Split(msg_txt, ",")) == 2 {
-					msg := "MENU;2;" + msg_txt 
+					msg := "MENU;2;" + msg_txt
 					enviarMsg(socket, msg)
 					for {
 						tam, _, _ = socket.ReadFromUDP(buffer_receber)
@@ -203,7 +203,7 @@ func main() {
 			for {
 				fmt.Scanln(&msg_txt)
 				if strings.Contains(msg_txt, "SAIR") {
-					msg := "MENU;5;SAIR"
+					msg := "MENUR;5;SAIR"
 					enviarMsg(socket, msg)
 					break
 				} else {
