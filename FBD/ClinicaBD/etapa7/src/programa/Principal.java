@@ -17,9 +17,8 @@ public class Principal {
 
 		Medico med = new Medico();
 		MedicoDAO baseMedico = new MedicoJDBCDAO();
-		int id;
 
-		String menu = "Escolha uma opï¿½ï¿½o:\n1 - Exibir Mï¿½dicos \n2 - Cadastrar Mï¿½dicos \n3 - Alterar Valores \n4 - Deletar Mï¿½dicos";
+		String menu = "Escolha uma opção:\n1 - Exibir Médicos \n2 - Cadastrar Médicos \n3 - Alterar Atributos do Médico \n4 - Deletar Médicos";
 		char option;
 		do {
 
@@ -37,7 +36,7 @@ public class Principal {
 			case '2':
 				criarMedico(med);
 				baseMedico.salvar(med);
-				JOptionPane.showMessageDialog(null, "Mï¿½dico adicionado ao banco de dados");
+				JOptionPane.showMessageDialog(null, "Médicos adicionado ao banco de dados");
 				break;
 			case '3':
 				atualizarMedico(baseMedico);
@@ -48,7 +47,7 @@ public class Principal {
 			case '5':
 				break;
 			default:
-				JOptionPane.showMessageDialog(null, "Opï¿½ï¿½o Invï¿½lida");
+				JOptionPane.showMessageDialog(null, "Opção Inválida");
 				break;
 			}
 		}while (option != '5');
@@ -59,7 +58,7 @@ public class Principal {
 
 	public static void listarTabelasMedico(List<Medico> baseMedico){
 		StringBuilder list = new StringBuilder();
-		list.append("Funcionï¿½rios:\n");
+		list.append("Funcionários:\n");
 		for(Medico con : baseMedico) {
 			list.append(con).append("\n");
 		}
@@ -71,13 +70,13 @@ public class Principal {
 	}
 
 	public static void criarMedico(Medico med) {
-		int id = Integer.parseInt(JOptionPane.showInputDialog("Digite o ID do novo mï¿½dico", med.getId_func()));
-		String nome = JOptionPane.showInputDialog("Digite o Nome do novo mï¿½dico", med.getNome());
-		String espc = JOptionPane.showInputDialog("Digite a Especialidade do novo mï¿½dico", med.getEspecialidade());
-		String end = JOptionPane.showInputDialog("Digite o Endereï¿½o do novo mï¿½dico", med.getEndereco());
-		String bairro = JOptionPane.showInputDialog("Digite o Bairro do novo mï¿½dico", med.getBairro());
-		String cep = JOptionPane.showInputDialog("Digite o CEP do novo mï¿½dico", med.getCep());
-		String estado =JOptionPane.showInputDialog("Digite a sigla do Estado do novo mï¿½dico", med.getEstado());
+		int id = Integer.parseInt(JOptionPane.showInputDialog("Digite o ID:", med.getId_func()));
+		String nome = JOptionPane.showInputDialog("Digite o Nome: ", med.getNome());
+		String espc = JOptionPane.showInputDialog("Digite a Especialidade: ", med.getEspecialidade());
+		String end = JOptionPane.showInputDialog("Digite o Endereço", med.getEndereco());
+		String bairro = JOptionPane.showInputDialog("Digite o Bairro: ", med.getBairro());
+		String cep = JOptionPane.showInputDialog("Digite o CEP: ", med.getCep());
+		String estado =JOptionPane.showInputDialog("Digite a sigla do Estado: ", med.getEstado());
 
 		med.setId_func(id);
 		med.setNome(nome);
@@ -91,13 +90,13 @@ public class Principal {
 
 
 	public static void atualizarMedico(MedicoDAO baseMedico) {
-		int id = Integer.parseInt(JOptionPane.showInputDialog("Digite o ID do mï¿½dico", null));
+		int id = Integer.parseInt(JOptionPane.showInputDialog("Digite o ID do Médico", null));
 		Medico med = baseMedico.buscar(id);
 		if(med == null) {
-            JOptionPane.showMessageDialog(null, "O ID nï¿½o estï¿½ registrado na base de dados ou nï¿½o ï¿½ do tipo Mï¿½dico");
+            JOptionPane.showMessageDialog(null, "O ID não está registrado na base de dados ou não é do tipo Médico");
         }else{
-        	String[] options = {"Nome", "Especialidade", "Endereï¿½o", "Bairro", "CEP", "Estado"};
-        	int opt = JOptionPane.showOptionDialog(null	, "Qual dado desse mï¿½dico queres alterar?", "Alterar Valores",
+        	String[] options = {"Nome", "Especialidade", "Endereço", "Bairro", "CEP", "Estado"};
+        	int opt = JOptionPane.showOptionDialog(null	, "Qual dado desse médico queres alterar?", "Alterar Valores",
         			JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
 
         	String dado = JOptionPane.showInputDialog("Novo valor: ");
@@ -122,7 +121,7 @@ public class Principal {
         		baseMedico.atualizar(med, "estado", dado);
         		break;
         	default:
-        		JOptionPane.showMessageDialog(null, "Erro ao selecionar opï¿½ï¿½o!");
+        		JOptionPane.showMessageDialog(null, "Erro ao selecionar opção!");
         		break;
         	}
 
@@ -130,12 +129,12 @@ public class Principal {
 	}
 
 	public static void deletarMedico(MedicoDAO baseMedico) {
-		int id = Integer.parseInt(JOptionPane.showInputDialog("Digite o ID do mï¿½dico a ser excluido: "));
+		int id = Integer.parseInt(JOptionPane.showInputDialog("Digite o ID do Médico a ser excluido: "));
 		if(baseMedico.buscar(id) == null) {
-            JOptionPane.showMessageDialog(null, "O ID nï¿½o estï¿½ registrado na base de dados ou nï¿½o ï¿½ do tipo Mï¿½dico");
+            JOptionPane.showMessageDialog(null, "O ID não está registrado na base de dados ou não é tipo Médico");
         }else{
             baseMedico.deletar(id);
-            JOptionPane.showMessageDialog(null, "Mï¿½dico deletado do banco de dados");
+            JOptionPane.showMessageDialog(null, "Médico deletado do banco de dados");
         }
 
 	}

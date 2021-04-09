@@ -55,7 +55,7 @@ public class MedicoJDBCDAO implements MedicoDAO{
             pst.setInt(2, med.getId_func());
             pst.executeUpdate();
         } catch(SQLException e) {
-            throw new DAOException("A operação não pôde ser realizada.", e);
+            throw new DAOException("A operação não pode ser realizada.", e);
         } finally {
             try {
                 if (con != null)
@@ -75,7 +75,7 @@ public class MedicoJDBCDAO implements MedicoDAO{
 			pst.setInt(1, id);
 			pst.executeUpdate();
 		} catch(SQLException e) {
-			throw new DAOException("A operação não pôde ser realizada.", e);
+			throw new DAOException("A operação não pode ser realizada.", e);
 		} finally {
 			try {
 				if (con != null)
@@ -155,7 +155,7 @@ public class MedicoJDBCDAO implements MedicoDAO{
 				meds.add(m);
 			}
 		} catch(SQLException e) {
-			throw new DAOException("A operação não pôde ser realizada.", e);
+			throw new DAOException("A operação não pode ser realizada.", e);
 		} finally {
 			try {
 				if (con != null)
