@@ -15,7 +15,6 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-		Medico med = new Medico();
 		MedicoDAO baseMedico = new MedicoJDBCDAO();
 
 		String menu = "Escolha uma opção:\n1 - Exibir Médicos \n2 - Cadastrar Médicos \n3 - Alterar Atributos do Médico \n4 - Deletar Médicos";
@@ -34,9 +33,7 @@ public class Principal {
 				listarTabelasMedico(baseMedico.listar());
 				break;
 			case '2':
-				criarMedico(med);
-				baseMedico.salvar(med);
-				JOptionPane.showMessageDialog(null, "Médicos adicionado ao banco de dados");
+				criarMedico(baseMedico);
 				break;
 			case '3':
 				atualizarMedico(baseMedico);
@@ -69,23 +66,30 @@ public class Principal {
 		JOptionPane.showMessageDialog(null, lista);
 	}
 
-	public static void criarMedico(Medico med) {
-		int id = Integer.parseInt(JOptionPane.showInputDialog("Digite o ID:", med.getId_func()));
-		String nome = JOptionPane.showInputDialog("Digite o Nome: ", med.getNome());
-		String espc = JOptionPane.showInputDialog("Digite a Especialidade: ", med.getEspecialidade());
-		String end = JOptionPane.showInputDialog("Digite o Endereço", med.getEndereco());
-		String bairro = JOptionPane.showInputDialog("Digite o Bairro: ", med.getBairro());
-		String cep = JOptionPane.showInputDialog("Digite o CEP: ", med.getCep());
-		String estado =JOptionPane.showInputDialog("Digite a sigla do Estado: ", med.getEstado());
+	public static void criarMedico(MedicoDAO baseMedico) {
+		try {
+			Medico med=new Medico();
+			int id = Integer.parseInt(JOptionPane.showInputDialog("Digite o ID:", med.getId_func()));
+			String nome = JOptionPane.showInputDialog("Digite o Nome: ", med.getNome());
+			String espc = JOptionPane.showInputDialog("Digite a Especialidade: ", med.getEspecialidade());
+			String end = JOptionPane.showInputDialog("Digite o Endereço", med.getEndereco());
+			String bairro = JOptionPane.showInputDialog("Digite o Bairro: ", med.getBairro());
+			String cep = JOptionPane.showInputDialog("Digite o CEP: ", med.getCep());
+			String estado =JOptionPane.showInputDialog("Digite a sigla do Estado: ", med.getEstado());
 
-		med.setId_func(id);
-		med.setNome(nome);
-		med.setEspecialidade(espc);
-		med.setBairro(bairro);
-		med.setEndereco(end);
-		med.setEstado(estado);
-		med.setCep(cep);
-		med.setTipo("Mï¿½dico");
+			med.setId_func(id);
+			med.setNome(nome);
+			med.setEspecialidade(espc);
+			med.setBairro(bairro);
+			med.setEndereco(end);
+			med.setEstado(estado);
+			med.setCep(cep);
+			med.setTipo("Médico");
+			baseMedico.salvar(med);
+			JOptionPane.showMessageDialog(null, "Médicos adicionado ao banco de dados");
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, e.getCause().getMessage());
+		}
 	}
 
 
@@ -100,7 +104,6 @@ public class Principal {
         			JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
 
         	String dado = JOptionPane.showInputDialog("Novo valor: ");
-
         	switch (opt) {
         	case 0:
         		baseMedico.atualizar(med, "nome", dado);

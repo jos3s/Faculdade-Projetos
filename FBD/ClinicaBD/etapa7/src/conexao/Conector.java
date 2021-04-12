@@ -8,6 +8,6 @@ public class Conector {
 
 	public static Connection getConnection() throws SQLException {
 		return  DriverManager.getConnection("jdbc:postgresql://localhost/clinica", "admbd", "bdadm");
-}
+	}
 	
 }
