@@ -1,8 +1,9 @@
 import modulo as mod
+import sys
 
 if __name__ == '__main__':
-    entrada=open("entrada.txt","r")
-    saida=open("saida.txt", "w")
+    entrada=open(sys.argv[1],"r")
+    saida=open(sys.argv[2], "w")
     vetor=[]
 
     for valor in entrada:
@@ -10,11 +11,11 @@ if __name__ == '__main__':
 
     nLinhas,vetor=mod.heapsort(vetor)
     saida.write(str(nLinhas))
-    saida.write('\n') 
+    saida.write('\n')
 
     for pos in range(nLinhas):
         saida.write(str(vetor[pos]))
-        saida.write('\n')
+        if pos<nLinhas-1: saida.write('\n')
 
     saida.close()
     entrada.close()
