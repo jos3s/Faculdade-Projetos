@@ -1,11 +1,11 @@
-def readFile(tabDiretorio, fat, tamBlock, disco):
+def readFile(tabDiretorio: [[str, int]], fat: [int], tamBlock: int, disco: [str]):
   """Funcao que le o arquivo de texto e imprime na tela
 
   Args:
-      tabDiretorio ([[string, int]]): array de diretorios 
-      fat ([int]): array que armazena o dados da tabela fat
-      tamBlock (int): tamanho do bloco do disco
-      disco ([string]): array que representa o disco de dados
+      tabDiretorio: array de diretorios 
+      fat: array que armazena o dados da tabela fat
+      tamBlock: tamanho do bloco do disco
+      disco: array que representa o disco de dados
   """
   print('\n=Ler Arquivo=')
   tituloArquivo = input("Digite o nome do arquivo: ")

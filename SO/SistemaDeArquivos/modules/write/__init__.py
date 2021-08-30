@@ -1,15 +1,15 @@
 import math
 
 
-def writeFile(tabDiretorio, fat, blocks, tamBlock, disco):
+def writeFile(tabDiretorio: [[str, int]], fat: [int], blocks: int, tamBlock: int, disco: [str]):
   """Função que escreve o conteudo do arquivo no disco e na tabela fat
 
   Args:
-      tabDiretorio ([[string, int]]): array de diretorios 
-      fat ([int]): array que armazena o dados da tabela fat
-      blocks (int): número de blocos do disco
-      tamBlock (int): tamanho do bloco do disco
-      disco ([string]): array que representa o disco de dados
+      tabDiretorio: array de diretorios 
+      fat: array que armazena o dados da tabela fat
+      blocks: número de blocos do disco
+      tamBlock: tamanho do bloco do disco
+      disco: array que representa o disco de dados
   """
   print('\n=Escrever em um Arquivo=')
   tituloArquivo = input("Digite o nome do arquivo: ")
@@ -29,18 +29,17 @@ def writeFile(tabDiretorio, fat, blocks, tamBlock, disco):
     print('Houve um error ao salvar no arquivo')
 
 
-def writeFAT(fat, blocks, tamBlock, write, tituloArquivo, tabDiretorio):
+def writeFAT(fat: [int], blocks: int, tamBlock: int, write: [str], tituloArquivo: str, tabDiretorio: [[str, int]]):
   """Escreva no array fat o uso de disco pelo arquivo
 
   Args:
-      fat ([int]): array que armazena o dados da tabela fat
-      blocks (int): número de blocos do disco
-      tamBlock (int): tamanho do bloco do disco
-      write ([string]): conteudo a ser escrito no disco
-      tituloArquivo (string): titulo do arquivo que está recebendo os dados
-      tabDiretorio ([[string, int]]): array de diretorios 
+      fat: array que armazena o dados da tabela fat
+      blocks: número de blocos do disco
+      tamBlock: tamanho do bloco do disco
+      write: conteudo a ser escrito no disco
+      tituloArquivo titulo do arquivo que está recebendo os dados
+      tabDiretorio: array de diretorios 
   """
-
   #verifico quantos blocos a frase vai usar
   blocksWrite = math.ceil(len(write) / tamBlock)
   blocksFree = 0
@@ -74,27 +73,33 @@ def writeFAT(fat, blocks, tamBlock, write, tituloArquivo, tabDiretorio):
         fat[i] = i
         break
       elif fat[i] == None and block == -1:
+        #verifico se a posição da tabela fat não está alocada e se o arquivo ainda não está no disco
         block = i
+        #defino como bloco inicial o indicie atual da tabela fat e removo um do número de blocos que o arquivo vai usar
         contBlocks -= 1
       elif fat[i] == None and block != -1 and contBlocks > 0:
+        #se posição da tabela fat não está alocada, se ainda preciso de bloco no disco e se existe um bloco anterior já definido
+        #defino a usando o bloco como indice da tabela que vai indicar o bloco atual livre
         fat[block] = i
+        #defino o novo bloco anterior como o indice atual
         block = i
         contBlocks -= 1
       if fat[i] == None and block != -1 and contBlocks <= 0:
+        #se o posição da tabela fat não está alocada, se o bloco anterior já foi definido e se não existe mais blocos a serem alocados defino o bloco atual como fim do arquivo
         fat[block] = -1
         break
 
 
-def writeDisco(write, tituloArquivo, fat, tamBlock, disco, tabDiretorio):
+def writeDisco(write: str, tituloArquivo: str, fat: [int], tamBlock: int, disco: [str], tabDiretorio: [[str, int]]):
   """Escreve no disco dados do arquivo
 
   Args:
-      write (string): conteudo a ser escrito no disco
-      tituloArquivo (string): titulo do arquivo que está recebendo os dados
-      fat ([int]): array que armazena o dados da tabela fat
-      tamBlock (int): tamanho do bloco do disco
-      disco ([string]): array que representa o disco de dados
-      tabDiretorio ([[string, int]]): array de diretorios 
+      write: conteudo a ser escrito no disco
+      tituloArquivo: titulo do arquivo que está recebendo os dados
+      fat: array que armazena o dados da tabela fat
+      tamBlock: tamanho do bloco do disco
+      disco: array que representa o disco de dados
+      tabDiretorio: array de diretorios 
   """
   initialWrite = -1
   for j in range(len(tabDiretorio)):
@@ -109,13 +114,18 @@ def writeDisco(write, tituloArquivo, fat, tamBlock, disco, tabDiretorio):
     #ando pelos valores de pos (usando sempre o ultimo indice) para encontrar o proximo valor diferente de -1, ou seja, pegando o indice de todos os blocos alocados para o arquivo
     proxPos = fat[pos[-1]]
     if initialWrite == proxPos or proxPos == -1:
+      #se o valor na tabela fat for igual ao seu index ou -1 signfica que chegue ao fim das posições alocadas na tabela fat
       break
 
   for item in pos:
-    #para item em pos, representa um o inicio de um bloco do disco
+    #cada item em pos, representa um bloco do disco
     tam = tamBlock
     for i in range(len(write)):
+      #faço um loop para cada caractere que preciso escrever
       if tam > 0:
+        #escrevendo o caractere no disco apenas até preencher um bloco do disco
         disco[(item*tamBlock)+i] = write[i]
         tam -= 1
+    #removo da frase original a quantidade de caracteres que escrevi no disco
     write = write[tamBlock:]
+    #repito isso até escrever no ultimo bloco alocado

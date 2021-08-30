@@ -1,8 +1,8 @@
-def createFile(tabDiretorio):
+def createFile(tabDiretorio: [[str, int]]):
   """É a função que criar o arquivo na tabela de diretorio
 
   Args:
-      tabDiretorio ([[string, int]]): array de diretorios 
+      tabDiretorio: array de diretorios 
   """
   print('\n=Criar Arquivo=')
   tituloArquivo = input("Digite o nome do arquivo: ")
@@ -10,12 +10,12 @@ def createFile(tabDiretorio):
   print('Arquivo criado\n')
 
 
-def deleteFile(tabDiretorio, fat):
+def deleteFile(tabDiretorio: [[str, int]], fat:[int]):
   """É a função que deleta o arquivo na tabela de diretorio e limpa a tabela fat
 
   Args:
-      tabDiretorio ([[string, int]]): array de diretorios 
-      fat ([int]): array que armazena o dados da tabela fat
+      tabDiretorio: array de diretorios 
+      fat: array que armazena o dados da tabela fat
   """
   print('\n=Deletar Arquivo=')
   tituloArquivo = input("Digite o nome do arquivo: ")
