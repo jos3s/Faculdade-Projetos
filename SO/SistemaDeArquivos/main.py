@@ -2,20 +2,28 @@ from modules.write import writeFile
 from modules.createDelete import createFile, deleteFile
 from modules.read import readFile
 
-
 tabDiretorio = []
-opcoesMenu = "Menu: \n1 Criar arquivo \n2 Apagar arquivo  \n3 Escrever no arquivo \n4 Ler arquivo \n5 Inserir ao fim do arquivo (não implementado) \n6 Sair"
 
 
-if __name__ == "__main__":
+def blocksAndTamBlocs() -> [int, int]:
   blocks = int(input("Digite o numero de blocos do disco?"))
   tamBlock = int(input("Digite o tamanho do bloco?"))
   print('')
+  return blocks, tamBlock
+
+
+def menu():
+  print("Menu: \n1 Criar arquivo \n2 Apagar arquivo  \n3 Escrever no arquivo \n4 Ler arquivo \n5 Inserir ao fim do arquivo (não implementado) \n6 Sair")
+  opc = int(input('Digite a sua escolha:'))
+  return opc
+
+
+if __name__ == "__main__":
+  blocks, tamBlock = blocksAndTamBlocs()
   fat = [None]*blocks
   disco = [None]*(blocks*tamBlock)
   while True:
-    print(opcoesMenu)
-    opc = int(input('Digite a sua escolha:'))
+    opc = menu()
     if opc == 1:
       createFile(tabDiretorio)
     elif opc == 2:
