@@ -25,4 +25,3 @@ Nome | Linguagem | Cadeira | Semestre
  [Sistema de Arquivos](SO/SistemaDeArquivos) | Python | Sistemas Operacionais | 5º Semestre
  [Algoritmos de Ordenação e Tabela Hash](EDA/OrdenacaoEHash) | C | Estrutura de Dados Avançadas | 6º Semestre
  [Árvore AVL](EDA/AVL) | C | Estrutura de Dados Avançadas | 6º Semestre
- [Árvore AVL](EDA/AVL) | C | Estrutura de Dados Avançadas | 6º Semestre
