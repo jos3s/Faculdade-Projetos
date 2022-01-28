@@ -23,3 +23,6 @@ Nome | Linguagem | Cadeira | Semestre
  [HeapSort](PAA/HeapSort) | Python | Projeto e Análise de Algoritmos | 4º Semestre
  [Clínica](FBD/ClinicaBD) | SQL e Java | Fundamento de Banco de Dados | 4º Semestre
  [Sistema de Arquivos](SO/SistemaDeArquivos) | Python | Sistemas Operacionais | 5º Semestre
+ [Algoritmos de Ordenação e Tabela Hash](EDA/OrdenacaoEHash) | C | Estrutura de Dados Avançadas | 6º Semestre
+ [Árvore AVL](EDA/AVL) | C | Estrutura de Dados Avançadas | 6º Semestre
+ [Árvore AVL](EDA/AVL) | C | Estrutura de Dados Avançadas | 6º Semestre
