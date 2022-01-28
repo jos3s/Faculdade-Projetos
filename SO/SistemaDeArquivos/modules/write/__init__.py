@@ -108,7 +108,7 @@ def writeDisco(write: str, tituloArquivo: str, fat: [int], tamBlock: int, disco:
       initialWrite = tabDiretorio[j][1]
       #se o arquivo existir pego o primeiro endereço da tabela fat
 
-  #crior um array que vai armazenar todas as posições da tabela fat do respectivo arquivo
+  #crio um array que vai armazenar todas as posições da tabela fat do respectivo arquivo
   pos = [initialWrite]
   while True:
     #ando pelos valores de pos (usando sempre o ultimo indice) para encontrar o proximo valor diferente de -1, ou seja, pegando o indice de todos os blocos alocados para o arquivo
