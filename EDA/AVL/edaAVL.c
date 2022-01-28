@@ -1,6 +1,3 @@
-// Jose Ulisses S. Macedo Oliviera - 472946
-// https://youtu.be/GZYtKcdjInw
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
