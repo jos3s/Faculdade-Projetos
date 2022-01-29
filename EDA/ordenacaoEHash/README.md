@@ -45,7 +45,7 @@ Gera relatório com os algoritmos de ordenação implementados. Seguindo essas e
 - Crie um vetor de tamanho n para armazenar as chaves que deverão ser escolhidas randomicamente entre 0 e 2.000.000.000.
 - Depois percorra o vetor das n chaves inserindo cada chave em cada uma das 5 tabelas utilizando o método específico de cada tabela (divisão, dobra,...). Isto é, em cada uma das 5 cinco tabelas deverão ser inseridas (quando não tiver colisão) as n chaves.
 
-O processo do relatório descrito acima dever ́a ser refeito 5 vezes considerando os valores para n:
+O processo do relatório descrito acima deverá ser refeito 5 vezes considerando os valores para n:
 
 - n = 200.000
 - n = 400.000
