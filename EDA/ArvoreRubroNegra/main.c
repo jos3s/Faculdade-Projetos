@@ -1,6 +1,3 @@
-//José Ulisses Silva Macedo Olveira - 472946
-//Link:https://youtu.be/1OG4qohH2CM
-
 //includes
 #include <stdlib.h>
 #include <stdio.h>
