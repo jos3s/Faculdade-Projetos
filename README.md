@@ -13,9 +13,9 @@ O objetivo desse repositório é armazenar todos os projetos feitos por [mim](ht
 
 Nome | Linguagem | Cadeira | Semestre
 ---------|---------|---------|:---------:
- [Pulseira de Pagamento](ARQ%20DE%20COMPUTADORES/PulseiraDePagamentos) | MIPS | Arquitetura de Computadores | 2º Semestre
- [Labirinto](LAB%20DE%20PROGRAMACAO/Labirinto) | C | Laboratório de Programação | 2º Semestre
- [Implementação de Grafos](ALG%20EM%20GRAFOS/Projeto1) | Python | Algoritmos em Grafos | 3º Semestre
+ [Pulseira de Pagamento](ARQ_DE_COMPUTADORES/PulseiraDePagamentos) | MIPS | Arquitetura de Computadores | 2º Semestre
+ [Labirinto](LABORATORIO/Labirinto) | C | Laboratório de Programação | 2º Semestre
+ [Implementação de Grafos](ALG_EM_GRAFOS/Projeto1) | Python | Algoritmos em Grafos | 3º Semestre
  [Agenda com Swing](https://github.com/jos3s/Projeto-Agenda-Swing/tree/4a7c291ff7e8372b67dd7e5e54520bffd4965112) | Java | Programação Orientada a Objetos | 3º Semestre
  [Verificador de Prova do Método Axiomatico](LOGICA/VerificadorDeProva) | Python | Lógica para Computação | 4º Semestre
  [Resolver Caminho Eureliano](LOGICA/CaminhoEureliano) | Python | Lógica para Computação | 4º Semestre
@@ -25,3 +25,4 @@ Nome | Linguagem | Cadeira | Semestre
  [Sistema de Arquivos](SO/SistemaDeArquivos) | Python | Sistemas Operacionais | 5º Semestre
  [Algoritmos de Ordenação e Tabela Hash](EDA/OrdenacaoEHash) | C | Estrutura de Dados Avançadas | 6º Semestre
  [Árvore AVL](EDA/AVL) | C | Estrutura de Dados Avançadas | 6º Semestre
+ [Árvore Rubro Negra](EDA/ArvoreRubroNegra) | C | Estrutura de Dados Avançadas | 6º Semestre
