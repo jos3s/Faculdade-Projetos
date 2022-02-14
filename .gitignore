@@ -3,3 +3,7 @@ __pycache__/
 !/.vscode
 .history/
 FBD/ClinicaBD/etapa7/bin/
+
+//executaveis e c
+*.exe
+*.o
